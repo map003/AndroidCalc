@@ -1,0 +1,63 @@
+package com.example.calculator;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    private EditText textInputOne;
+    private EditText textInputTwo;
+    private TextView textOutput;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        textInputOne = findViewById(R.id.editNumber1);
+        textInputTwo = findViewById(R.id.editNumber2);
+        textOutput = findViewById(R.id.numberOutput);
+
+    }
+    public void sumNumber(View view)    {
+        float num1 = Float.parseFloat(textInputOne.getText().toString());
+        float num2 = Float.parseFloat(textInputTwo.getText().toString());
+
+        float num3 = num1 + num2;
+
+        textOutput.setText(String.valueOf(num3));
+
+
+    }
+
+    public void minusNumber(View view)    {
+        float num1 = Float.parseFloat(textInputOne.getText().toString());
+        float num2 = Float.parseFloat(textInputTwo.getText().toString());
+
+        float num3 = num1 - num2;
+
+        textOutput.setText(String.valueOf(num3));
+
+    }
+    public void multiplyNumber(View view) {
+        float num1 = Float.parseFloat(textInputOne.getText().toString());
+        float num2 = Float.parseFloat(textInputTwo.getText().toString());
+
+        float num3 = num1 * num2;
+
+        textOutput.setText(String.valueOf(num3));
+    }
+    public void divideNumber(View view) {
+        float num1 = Float.parseFloat(textInputOne.getText().toString());
+        float num2 = Float.parseFloat(textInputTwo.getText().toString());
+
+        float num3 = num1 / num2;
+
+        textOutput.setText(String.valueOf(num3));
+    }
+
+}
